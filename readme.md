@@ -12,7 +12,7 @@ Debt - visualise debt repayment over time
 Savings - visualise growth
 
 1.0 Ideas: Make the endpoints
-Mortgage - calculate repayment, calculate overpayment effect on term (lump / regular)
+Mortgage - calculate repayment, calculate overpayment effect on term (lump / regular), calculate affordability
 Pension - calculate estimated pot, calculate drawdown with/without lump sum
 Take-home - calculate take home pay (wage/salary)
 Debt - calculate debt repayments

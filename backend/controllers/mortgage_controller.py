@@ -1,18 +1,18 @@
-from utils.mortgage_utils import calculate_mortgage
+from utils.mortgage_utils import calculate_mortgage_repayment
 from flask import request
 
 def get_mortgage_repayment():
-    # Get input from the frontend (Flask will automatically pass `request`)
-    data = request.json  # Ensure this is a POST request with JSON payload
+    # Recieve user-input JSON payload
+    data = request.json 
     amount = data.get('amount')
     interest_rate = data.get('interest_rate')
     years = data.get('years')
     
     if not amount or not interest_rate or not years:
-        return {"error": "Missing required fields (amount, interest_rate, years)"}, 400
+        return {"error": "Missing required fields"}, 400
     
-    # Calculate the mortgage repayment
-    repayment = calculate_mortgage(amount, interest_rate, years)
+    # Call utils with params
+    repayment = calculate_mortgage_repayment(amount, interest_rate, years)
     
-    # Return the calculated repayment as a JSON response
-    return {"repayment": repayment}
+    # Return user-output JSON payload
+    return {"Monthly repayment": repayment}
